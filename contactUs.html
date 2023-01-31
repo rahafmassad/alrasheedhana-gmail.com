@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us - Restaurant Name</title>
+    <style>
+      /* Add CSS styles for the Contact Us page */
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
+      form {
+        width: 500px;
+        margin: 0 auto;
+        text-align: left;
+        padding: 50px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+      input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        background-color: #16a085;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      input[type="submit"]:hover {
+        background-color: #1abc9c;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Contact Us</h1>
+    <form action="contact.php" method="post">
+      <input type="text" name="name" placeholder="Your Name">
+      <input type="email" name="email" placeholder="Your Email">
+      <textarea name="message" placeholder="Your Message"></textarea>
+      <input type="submit" value="Send">
+    </form>
+  </body>
+</html>

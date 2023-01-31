@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Restaurant Website</title>
+    <style>
+      /* Your existing CSS styles here */
+      
+      /* Image Gallery CSS */
+      .container {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .image-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+      }
+      
+      .image {
+        width: 50%;
+      }
+      
+      .left-arrow, .right-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 36px;
+        color: #333;
+        cursor: pointer;
+      }
+      
+      .left-arrow {
+        left: 0;
+      }
+      
+      .right-arrow {
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Your existing HTML content here -->
+    
+    <!-- Image Gallery HTML -->
+    <div class="container">
+      <div class="image-container">
+        <img src="image1.jpg" alt="Image 1" class="image">
+      </div>
+      <div class="left-arrow">&#10094;</div>
+      <div class="right-arrow">&#10095;</div>
+    </div>
+    
+    <!-- Your existing JavaScript code here -->
+    
+    <!-- Image Gallery JavaScript -->
+    <script>
+      const images = [
+      "img1 (1).jpeg",
+        "img1 (2).jpeg",
+        "img1 (3).jpeg",
+        "img1 (4).jpeg",
+        "img1 (5).jpeg",
+        "img1 (6).jpeg",
+        "img1 (7).jpeg",
+        "img1 (8).jpeg",
+        "img1 (9).jpeg",
+        "img1 (10).jpeg",
+        "img1 (11).jpeg",
+      ];
+      let currentImageIndex = 0;
+      
+      const container = document.querySelector(".container");
+      const imageContainer = document.querySelector(".image-container");
+      const leftArrow = document.querySelector(".left-arrow");
+      const rightArrow = document.querySelector(".right-arrow");
+      
+      function updateImage() {
+        imageContainer.innerHTML = `<img src="${images[currentImageIndex]}" alt="Image ${currentImageIndex + 1}" class="image">`;
+      }
+      
+      leftArrow.addEventListener("click", function() {
+        currentImageIndex--;
+        if (currentImageIndex < 0) {
+          currentImageIndex = images.length - 1;
+        }
+        updateImage();
+      });
+      
+      rightArrow.addEventListener("click", function() {
+        currentImageIndex++;
+        if (currentImageIndex >= images.length) {
+          currentImageIndex = 0;
+        }
+        updateImage();
+      });
+      
+      updateImage();
+    </script>
+  </body>
+</html>
